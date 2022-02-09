@@ -24,4 +24,28 @@ public class DirectorTest {
     public void hasDeptName(){
         assertEquals("Tech", director.getDeptName());
     }
+
+    @Test
+    public void canRaiseSalary(){
+        director.raiseSalary(10.00);
+        assertEquals(88000.00, director.getSalary(), 0.00);
+    }
+
+    @Test
+    public void cantSetNegetiveRaiseSalary(){
+        director.raiseSalary(-10.00);
+        assertEquals(80000.00, director.getSalary(), 0.00);
+    }
+
+    @Test
+    public void cantSetNullName(){
+        director.setName(null);
+        assertEquals("Jeff", director.getName());
+    }
+
+    @Test
+    public void canPayBonus(){
+        assertEquals(1600.00, director.payBonus(),0.00);
+    }
+
 }

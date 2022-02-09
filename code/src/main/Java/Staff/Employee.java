@@ -25,7 +25,7 @@ public abstract class Employee {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null) this.name = name;
     }
 
     public void setNI_Number(String NI_Number) {
@@ -37,7 +37,7 @@ public abstract class Employee {
     }
 
     public void raiseSalary(Double percent){
-        setSalary(this.getSalary() + this.getSalary() * (percent / 100));
+        if (percent > 0) setSalary(this.getSalary() + this.getSalary() * (percent / 100));
     }
 
     public Double payBonus(){
